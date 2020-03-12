@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./:/etc/nginx
+    links:
+      - auth
+    depends_on:
+      - auth
+  auth:
+    image: timmymorr/auth-svc:latest
+    ports:
+      - "3000"
