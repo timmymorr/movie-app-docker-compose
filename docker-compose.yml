@@ -24,7 +24,7 @@ services:
       - "3000"
     depends_on:
       - mongo
-  auth:
+  favourite:
     image: timmymorr/favourite-svc:latest
     environment:
       - MONGO_LOCAL_CONN_URL=mongodb://mongo:27017/auth
