@@ -19,7 +19,8 @@ services:
   auth:
     image: timmymorr/auth-svc:latest
     environment:
-      - MONGO_LOCAL_CONN_URL=mongodb://mongo:27017/auth
+      - MONGO_PROD_CONN_URL=mongodb://mongo:27017/auth
+      - JWT_SECRET=timmysproductionjwtsecret
     ports:
       - "3000"
     depends_on:
@@ -27,7 +28,8 @@ services:
   favourite:
     image: timmymorr/favourite-svc:latest
     environment:
-      - MONGO_LOCAL_CONN_URL=mongodb://mongo:27017/auth
+      - MONGO_PROD_CONN_URL=mongodb://mongo:27017/favourite
+      - JWT_SECRET=timmysproductionjwtsecret
     ports:
       - "3000"
     depends_on:
